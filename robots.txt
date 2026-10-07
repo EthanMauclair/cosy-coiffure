@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cosy-coiffure.fr/sitemap.xml
+Sitemap: https://ethanmauclair.github.io/cosy-coiffure/sitemap.xml
