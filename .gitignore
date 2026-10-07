@@ -1,0 +1,7 @@
+# Fichiers locaux de Claude Code (tests en local)
+.claude/
+
+# Fichiers système
+Thumbs.db
+desktop.ini
+.DS_Store

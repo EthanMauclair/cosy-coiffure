@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#102753"/>
+  <g fill="none" stroke="#F5F5F3" stroke-width="3.5" stroke-linecap="round">
+    <!-- Ciseaux -->
+    <path d="M15 9 L29.5 42"/>
+    <path d="M33 9 L18.5 42"/>
+    <circle cx="31" cy="47.5" r="5.5"/>
+    <circle cx="17" cy="47.5" r="5.5"/>
+  </g>
+  <!-- Peigne -->
+  <rect x="41" y="10" width="6" height="44" rx="2" fill="#F5F5F3"/>
+  <g stroke="#F5F5F3" stroke-width="2.5" stroke-linecap="round">
+    <path d="M47 14h7M47 20h7M47 26h7M47 32h7M47 38h7M47 44h7M47 50h7"/>
+  </g>
+</svg>
