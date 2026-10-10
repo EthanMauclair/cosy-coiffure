@@ -40,3 +40,26 @@ tabs.forEach((tab, i) => {
     next.focus();
   });
 });
+
+// ----- Avis Shapo : script tiers chargé seulement à l'approche de la section -----
+const reviews = document.getElementById('avis');
+
+function loadShapo() {
+  if (document.getElementById('shapo-embed-js')) return;
+  const s = document.createElement('script');
+  s.id = 'shapo-embed-js';
+  s.src = 'https://cdn.shapo.io/js/embed.js';
+  s.async = true;
+  document.body.appendChild(s);
+}
+
+if (reviews && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((e) => e.isIntersecting)) return;
+    observer.disconnect();
+    loadShapo();
+  }, { rootMargin: '600px 0px' });
+  observer.observe(reviews);
+} else {
+  loadShapo();
+}

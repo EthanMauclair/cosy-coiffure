@@ -50,15 +50,18 @@
       "addressCountry": "FR"
     },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "08:30", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "12:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "14:00", "closes": "19:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:30", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "19:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "17:00" }
     ],
     "sameAs": ["https://www.facebook.com/CosyCoiffure89500/"]
   }
   </script>
 
+  <!-- Polices affichées au-dessus de la ligne de flottaison : chargées en priorité -->
+  <link rel="preload" href="fonts/sora-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -103,8 +106,10 @@
     </div>
   </div>
   <figure class="hero__image">
-    <img src="images/salon.jpg" width="2000" height="1500" alt="Intérieur du salon Cosy Coiffure : comptoir d'accueil bleu, fauteuils blancs et miroirs dorés">
-
+    <picture>
+      <source type="image/webp" srcset="images/salon-640.webp 640w, images/salon-1000.webp 1000w, images/salon-1400.webp 1400w" sizes="(min-width: 901px) 700px, 100vw">
+      <img src="images/salon.jpg" width="2000" height="1500" fetchpriority="high" alt="Intérieur du salon Cosy Coiffure : comptoir d'accueil bleu, fauteuils blancs et miroirs dorés">
+    </picture>
   </figure>
 </section>
 
@@ -127,7 +132,7 @@
   <div class="container">
     <div class="section-head">
       <h2 class="title">Tarifs</h2>
-      <p class="muted">Prix TTC. Les moins de 20 ans bénéficient d'un tarif réduit de 20 % sur toutes les prestations.</p>
+      <p class="muted">Prix TTC. Les moins de 20 ans bénéficient de 20&nbsp;% de réduction sur les prestations indiquées dans la colonne <span class="nowrap">«&nbsp;–20 ans&nbsp;»</span>.</p>
     </div>
 
     <div class="tabs" role="tablist" aria-label="Catégorie de tarifs">
@@ -144,34 +149,23 @@
             <caption>Coupes &amp; coiffures</caption>
             <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Coupe</th><td>19,50 €</td><td>15,60 €</td></tr>
-              <tr><th scope="row">Égalisation</th><td>15,50 €</td><td>12,40 €</td></tr>
-              <tr><th scope="row">Mise en plis</th><td>19,50 €</td><td>15,60 €</td></tr>
-              <tr><th scope="row">Brushing cheveux courts</th><td>20,00 €</td><td>16,00 €</td></tr>
-              <tr><th scope="row">Brushing cheveux longs</th><td>24,50 €</td><td>19,60 €</td></tr>
-              <tr><th scope="row">Séchage</th><td>19,10 €</td><td>15,28 €</td></tr>
-              <tr><th scope="row">Chignon selon vos désirs</th><td>31,50 €</td><td>25,20 €</td></tr>
-              <tr><th scope="row">Chignon mariée avec essayage</th><td>101,50 €</td><td>81,20 €</td></tr>
-              <tr><th scope="row">Natte</th><td>21,50 €</td><td>17,20 €</td></tr>
-              <tr><th scope="row">Nattes africaines</th><td>30,50 €</td><td>24,40 €</td></tr>
+              <tr><th scope="row">Shampooing + coupe + brushing cheveux courts</th><td>33,00 €</td><td>26,40 €</td></tr>
+              <tr><th scope="row">Shampooing + mise en plis</th><td>19,50 €</td><td>15,60 €</td></tr>
+              <tr><th scope="row">Shampooing + brushing cheveux courts</th><td>20,00 €</td><td>16,00 €</td></tr>
+              <tr><th scope="row">Shampooing + brushing cheveux longs</th><td>24,50 €</td><td>19,60 €</td></tr>
+              <tr><th scope="row">Chignon</th><td>25 – 30 €</td><td class="na"><span aria-hidden="true">—</span><span class="sr-only">Pas de tarif réduit</span></td></tr>
+              <tr><th scope="row">Chignon forfait mariage</th><td>95,00 €</td><td class="na"><span aria-hidden="true">—</span><span class="sr-only">Pas de tarif réduit</span></td></tr>
             </tbody>
           </table>
         </div>
         <div class="price-card">
           <table class="price-table">
             <caption>Soins <span class="note">En complément d'une prestation.</span></caption>
-            <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Prix</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Soin traitant profond</th><td>7,00 €</td><td>5,60 €</td></tr>
-              <tr><th scope="row">Soin Triphasic René Furterer</th><td>8,00 €</td><td>6,40 €</td></tr>
-              <tr><th scope="row">Soin RF 80 René Furterer</th><td>7,00 €</td><td>5,60 €</td></tr>
-              <tr><th scope="row">Cuir chevelu gras / cheveux secs</th><td>22,00 €</td><td>17,60 €</td></tr>
-              <tr><th scope="row">Cuir chevelu / cheveux très secs</th><td>24,00 €</td><td>19,20 €</td></tr>
-              <tr><th scope="row">Cuir chevelu sec / cheveux secs</th><td>24,00 €</td><td>19,20 €</td></tr>
-              <tr><th scope="row">Cuir chevelu à pellicules</th><td>22,00 €</td><td>17,60 €</td></tr>
-              <tr><th scope="row">Cheveux dévitalisés et fatigués</th><td>22,00 €</td><td>17,60 €</td></tr>
-              <tr><th scope="row">Chute de cheveux</th><td>30,00 €</td><td>24,00 €</td></tr>
-              <tr><th scope="row">Wellaplex</th><td>16,00 €</td><td>12,80 €</td></tr>
+              <tr><th scope="row">Soin traitant profond</th><td>7,00 €</td></tr>
+              <tr><th scope="row">Soin Triphasic René Furterer</th><td>8,00 €</td></tr>
+              <tr><th scope="row">Soin RF 80 René Furterer</th><td>7,00 €</td></tr>
             </tbody>
           </table>
         </div>
@@ -179,39 +173,30 @@
       <div class="price-col">
         <div class="price-card">
           <table class="price-table">
-            <caption>Colorations &amp; techniques</caption>
+            <caption>Colorations &amp; techniques <span class="note">Forfaits shampooing, coupe et brushing cheveux courts compris.</span></caption>
             <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Coloration Koleston Me+</th><td>32,50 €</td><td>26,00 €</td></tr>
-              <tr><th scope="row">Color Touch</th><td>30,50 €</td><td>24,40 €</td></tr>
-              <tr><th scope="row">Shinefinity éclaircissant</th><td>31,50 €</td><td>25,20 €</td></tr>
-              <tr><th scope="row">Coloration Ivive</th><td>46,50 €</td><td>37,20 €</td></tr>
-              <tr><th scope="row">Coloration Re New</th><td>30,50 €</td><td>24,40 €</td></tr>
-              <tr><th scope="row">Démaquillant</th><td>36,50 €</td><td>29,20 €</td></tr>
-              <tr><th scope="row">Flash</th><td>28,50 €</td><td>22,80 €</td></tr>
-              <tr><th scope="row">Mèches</th><td>44,50 €</td><td>35,60 €</td></tr>
-              <tr><th scope="row">Doubles mèches</th><td>52,50 €</td><td>42,00 €</td></tr>
-              <tr><th scope="row">Balayage</th><td>33,50 €</td><td>26,80 €</td></tr>
-              <tr><th scope="row">Décoloration tête entière</th><td>35,50 €</td><td>28,40 €</td></tr>
-              <tr><th scope="row">Permanente</th><td>36,50 €</td><td>29,20 €</td></tr>
-              <tr><th scope="row">Permanente soft sans ammoniaque</th><td>42,50 €</td><td>34,00 €</td></tr>
-              <tr><th scope="row">Défrisage Xtenso</th><td>76,50 €</td><td>61,20 €</td></tr>
-              <tr><th scope="row">Lissage brésilien</th><td>Variable</td><td></td></tr>
+              <tr><th scope="row">Coloration</th><td>60,00 €</td><td>48,00 €</td></tr>
+              <tr><th scope="row">Balayage</th><td>61,00 €</td><td>48,80 €</td></tr>
+              <tr><th scope="row">Mèches</th><td>72,00 €</td><td>57,60 €</td></tr>
+              <tr><th scope="row">Doubles mèches</th><td>80,00 €</td><td>64,00 €</td></tr>
+              <tr><th scope="row">Permanente</th><td>63,00 €</td><td>50,40 €</td></tr>
+              <tr><th scope="row">Permanente sans ammoniaque</th><td>69,00 €</td><td>55,20 €</td></tr>
             </tbody>
           </table>
         </div>
         <div class="price-card">
           <table class="price-table">
             <caption>Suppléments coloration <span class="note">En complément d'une coloration.</span></caption>
-            <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Prix</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Ampoule Okara</th><td>6,00 €</td><td>4,80 €</td></tr>
-              <tr><th scope="row">Patine</th><td>17,00 €</td><td>13,60 €</td></tr>
-              <tr><th scope="row">Supplément ¼ dose</th><td>8,00 €</td><td>6,40 €</td></tr>
-              <tr><th scope="row">Supplément ½ dose</th><td>14,00 €</td><td>11,20 €</td></tr>
-              <tr><th scope="row">Supplément 1 tube</th><td>25,00 €</td><td>20,00 €</td></tr>
-              <tr><th scope="row">EOS</th><td>26,00 €</td><td>20,80 €</td></tr>
-              <tr><th scope="row">Wellaplex technique</th><td>8,00 €</td><td>6,40 €</td></tr>
+              <tr><th scope="row">Ampoule Okara</th><td>6,00 €</td></tr>
+              <tr><th scope="row">Patine</th><td>18,00 €</td></tr>
+              <tr><th scope="row">Supplément ¼ dose</th><td>9,00 €</td></tr>
+              <tr><th scope="row">Supplément ½ dose</th><td>15,00 €</td></tr>
+              <tr><th scope="row">Supplément 1 tube</th><td>26,00 €</td></tr>
+              <tr><th scope="row">EOS</th><td>27,00 €</td></tr>
+              <tr><th scope="row">Wellaplex technique</th><td>9,00 €</td></tr>
             </tbody>
           </table>
         </div>
@@ -226,19 +211,19 @@
             <caption>Coupes &amp; coiffures</caption>
             <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Coupe</th><td>18,50 €</td><td>14,80 €</td></tr>
-              <tr><th scope="row">Séchage</th><td>2,50 €</td><td>2,00 €</td></tr>
-              <tr><th scope="row">Taille de barbe</th><td>6,00 €</td><td>4,80 €</td></tr>
+              <tr><th scope="row">Shampooing + coupe + séchage</th><td>21,00 €</td><td>16,80 €</td></tr>
+              <tr><th scope="row">Coupe</th><td>12,00 €</td><td>9,60 €</td></tr>
+              <tr><th scope="row">Taille de barbe</th><td>6,00 €</td><td class="na"><span aria-hidden="true">—</span><span class="sr-only">Pas de tarif réduit</span></td></tr>
             </tbody>
           </table>
         </div>
         <div class="price-card">
           <table class="price-table">
             <caption>Soins <span class="note">En complément d'une prestation.</span></caption>
-            <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Prix</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Soin</th><td>7,00 €</td><td>5,60 €</td></tr>
-              <tr><th scope="row">Friction</th><td>4,00 €</td><td>3,20 €</td></tr>
+              <tr><th scope="row">Soin</th><td>7,00 €</td></tr>
+              <tr><th scope="row">Friction</th><td>4,00 €</td></tr>
             </tbody>
           </table>
         </div>
@@ -246,14 +231,12 @@
       <div class="price-col">
         <div class="price-card">
           <table class="price-table">
-            <caption>Colorations &amp; techniques</caption>
+            <caption>Colorations &amp; techniques <span class="note">Forfaits shampooing, coupe et séchage compris.</span></caption>
             <thead><tr><th scope="col">Prestation</th><th scope="col">Plein tarif</th><th scope="col">–20 ans</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Coloration</th><td>26,50 €</td><td>21,20 €</td></tr>
-              <tr><th scope="row">Flash</th><td>26,50 €</td><td>21,20 €</td></tr>
-              <tr><th scope="row">Décoloration tête entière</th><td>35,50 €</td><td>28,40 €</td></tr>
-              <tr><th scope="row">Permanente</th><td>46,50 €</td><td>37,20 €</td></tr>
-              <tr><th scope="row">Lissage brésilien</th><td>Variable</td><td></td></tr>
+              <tr><th scope="row">Coloration</th><td>41,00 €</td><td>32,80 €</td></tr>
+              <tr><th scope="row">Flash</th><td>41,00 €</td><td>32,80 €</td></tr>
+              <tr><th scope="row">Permanente</th><td>41,00 €</td><td>32,80 €</td></tr>
             </tbody>
           </table>
         </div>
@@ -265,12 +248,12 @@
       <div class="price-col">
         <div class="price-card">
           <table class="price-table">
-            <caption>Forfaits enfants <span class="note">Au-delà, les moins de 20 ans profitent du tarif –20 ans sur toutes les prestations.</span></caption>
+            <caption>Forfaits enfants <span class="note">Au-delà, les moins de 20 ans profitent du tarif –20 ans indiqué dans les onglets Femmes et Hommes.</span></caption>
             <thead><tr><th scope="col">Prestation</th><th scope="col">Prix</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Fille –10 ans · coupe + séchage</th><td>16,00 €</td></tr>
-              <tr><th scope="row">Garçon –10 ans · coupe + séchage</th><td>14,00 €</td></tr>
-              <tr><th scope="row">Coupe bébé –4 ans</th><td>10,80 €</td></tr>
+              <tr><th scope="row">Fille –10 ans · shampooing + coupe + séchage</th><td>16,00 €</td></tr>
+              <tr><th scope="row">Garçon –10 ans · shampooing + coupe + séchage</th><td>14,00 €</td></tr>
+              <tr><th scope="row">Coupe bébé –4 ans</th><td>7,00 €</td></tr>
             </tbody>
           </table>
         </div>
@@ -286,7 +269,7 @@
       <div class="split__head">
         <h2 class="title">Les marques que nous utilisons</h2>
       </div>
-      <p class="brands-intro">Vous avez le droit de savoir ce qu'on met sur vos cheveux. Voici les marques professionnelles utilisées au salon pour les colorations, les soins et les techniques.</p>
+      <p class="brands-intro">Vous avez le droit de savoir ce qu'on met sur vos cheveux. Voici les marques professionnelles utilisées au salon pour les colorations et les soins, ainsi que celle des produits en vente au salon.</p>
     </div>
     <div class="brands">
       <div class="brand-card">
@@ -300,9 +283,9 @@
         <span class="brand-card__products">Rituel Triphasic, soin RF 80</span>
       </div>
       <div class="brand-card">
-        <span class="brand-card__name">L'Oréal Professionnel</span>
-        <span class="brand-card__type">Techniques</span>
-        <span class="brand-card__products">Défrisage Xtenso</span>
+        <span class="brand-card__name">OHANIC</span>
+        <span class="brand-card__type">Produits en vente au salon</span>
+        <span class="brand-card__products">Formules «&nbsp;clean&nbsp;»</span>
       </div>
     </div>
   </div>
@@ -319,9 +302,8 @@
         <span class="muted">sur 37 avis Google</span>
       </div>
     </div>
-    <!-- Widget d'avis Shapo -->
+    <!-- Widget d'avis Shapo : chargé par script.js à l'approche de la section (performances mobiles) -->
     <div id="shapo-widget-ee447dfa7193e729e7a2"></div>
-    <script id="shapo-embed-js" type="text/javascript" src="https://cdn.shapo.io/js/embed.js" defer></script>
     <p class="reviews-link"><a class="link-underline" href="https://www.google.com/maps/search/?api=1&amp;query=Cosy+Coiffure+Villeneuve-sur-Yonne" target="_blank" rel="noopener">Lire tous les avis sur Google</a></p>
   </div>
 </section>
@@ -341,19 +323,15 @@
             <h3>Téléphone</h3>
             <p><a href="tel:+33386871796">03 86 87 17 96</a></p>
           </div>
-          <div>
-            <h3>Accès</h3>
-            <p>Bus ligne 802, arrêt devant le salon<br>Parking à proximité</p>
-          </div>
         </div>
         <div>
           <h3>Horaires</h3>
           <dl class="hours">
             <dt>Lundi</dt><dd class="closed">Fermé</dd>
-            <dt>Mardi</dt><dd>8h30 – 12h00 · 14h00 – 19h00</dd>
-            <dt>Mercredi</dt><dd>8h30 – 12h00 · 14h00 – 19h00</dd>
-            <dt>Jeudi</dt><dd>8h30 – 12h00 · 14h00 – 19h00</dd>
-            <dt>Vendredi</dt><dd>8h30 – 19h00</dd>
+            <dt>Mardi</dt><dd>9h00 – 12h00 · 14h00 – 19h00</dd>
+            <dt>Mercredi</dt><dd>9h00 – 12h00 · 14h00 – 19h00</dd>
+            <dt>Jeudi</dt><dd>9h00 – 12h00 · 14h00 – 19h00</dd>
+            <dt>Vendredi</dt><dd>9h00 – 19h00</dd>
             <dt>Samedi</dt><dd>8h30 – 17h00</dd>
             <dt>Dimanche</dt><dd class="closed">Fermé</dd>
           </dl>
@@ -361,7 +339,8 @@
         </div>
       </div>
       <div class="map">
-        <iframe title="Carte : Cosy Coiffure, 48 Rue Carnot, Villeneuve-sur-Yonne" src="https://www.google.com/maps?q=48+Rue+Carnot,+89500+Villeneuve-sur-Yonne&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
+        <iframe title="Carte : Cosy Coiffure, 48 Rue Carnot, Villeneuve-sur-Yonne" src="https://www.google.com/maps?q=48+Rue+Carnot,+89500+Villeneuve-sur-Yonne&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   </div>
 </section>
